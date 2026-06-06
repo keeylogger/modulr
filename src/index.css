@@ -1,0 +1,147 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    @apply bg-ink-900 text-slate-100 font-sans antialiased;
+    background-image:
+      radial-gradient(1200px 600px at 80% -10%, rgba(59, 130, 246, 0.08), transparent 60%),
+      radial-gradient(1000px 500px at -10% 110%, rgba(168, 85, 247, 0.08), transparent 60%);
+    background-attachment: fixed;
+    overflow: hidden;
+  }
+
+  ::selection {
+    background: rgba(59, 130, 246, 0.35);
+  }
+}
+
+@layer components {
+  .panel {
+    @apply rounded-2xl border border-white/5 bg-slate-panel/70 backdrop-blur-xl shadow-glow;
+  }
+
+  .accent-glow {
+    box-shadow: 0 0 0 1px var(--accent-border, rgba(255, 255, 255, 0.06)),
+      0 12px 50px -16px var(--accent-shadow, rgba(0, 0, 0, 0.7));
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-3.5 py-2 text-sm font-medium
+      transition-all duration-200 ease-spring select-none;
+  }
+
+  .btn-ghost {
+    @apply btn text-slate-300 hover:bg-white/5 hover:text-white;
+  }
+
+  .btn-primary {
+    @apply btn bg-white/10 text-white hover:bg-white/15 active:scale-[0.98];
+  }
+
+  .seg {
+    @apply rounded-lg bg-ink-700 border border-white/5 px-2 py-1 text-xs font-mono text-slate-200
+      outline-none transition-all duration-200 ease-spring focus:border-white/20
+      hover:border-white/15;
+  }
+
+  .num-input {
+    @apply w-16 rounded-md bg-ink-700 border border-white/5 px-1.5 py-0.5 text-xs font-mono
+      text-white outline-none transition-all duration-150 focus:border-white/30
+      hover:border-white/15;
+  }
+
+  .tag-key {
+    @apply text-[11px] uppercase tracking-wider text-slate-500;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* ----------------------------- Custom scrollbars -------------------------- */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.14) transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.24);
+  background-clip: content-box;
+}
+
+/* Range slider polish */
+input[type='range'] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 4px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  outline: none;
+  cursor: pointer;
+}
+
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #fff;
+  border: 3px solid var(--accent, #3b82f6);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  transition: transform 0.15s ease;
+}
+
+input[type='range']::-webkit-slider-thumb:hover {
+  transform: scale(1.18);
+}
+
+input[type='range']::-moz-range-thumb {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #fff;
+  border: 3px solid var(--accent, #3b82f6);
+}
+
+/* Hide number input spinners for a cleaner mono look */
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type='number'] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}

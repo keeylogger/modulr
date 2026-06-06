@@ -14,7 +14,7 @@ const TAB_ICONS: Record<TabId, typeof LayoutIcon> = {
   lighting: LightingIcon,
 };
 
-const REPO_URL = 'https://github.com/mtssilva/modulr';
+const REPO_URL = 'https://github.com/keeylogger/modulr';
 
 export default function App() {
   const { state, setActiveTab, resetAll } = useAppState();

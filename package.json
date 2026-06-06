@@ -5,7 +5,7 @@
   "type": "module",
   "description": "Front-End Mechanics Playground - an interactive, serverless playground for mastering CSS layout, SVG paths, and glass/neumorphic lighting.",
   "license": "MIT",
-  "homepage": "https://mtssilva.github.io/modulr/",
+  "homepage": "https://keeylogger.github.io/modulr/",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",

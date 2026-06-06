@@ -4,12 +4,14 @@
 
 **The Front-End Mechanics Playground** — a hyper-reactive, zero-backend studio for mastering CSS layout, SVG path geometry, and glass / neumorphic lighting.
 
-[![Build](https://github.com/mtssilva/modulr/actions/workflows/deploy.yml/badge.svg)](https://github.com/mtssilva/modulr/actions/workflows/deploy.yml)
+[![Build](https://github.com/keeylogger/modulr/actions/workflows/deploy.yml/badge.svg)](https://github.com/keeylogger/modulr/actions/workflows/deploy.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-22c55e.svg)](LICENSE)
 ![React](https://img.shields.io/badge/React-18-3b82f6?logo=react&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5-3178c6?logo=typescript&logoColor=white)
 ![Vite](https://img.shields.io/badge/Vite-5-a855f7?logo=vite&logoColor=white)
 ![Tailwind](https://img.shields.io/badge/Tailwind-3-2dd4bf?logo=tailwindcss&logoColor=white)
+
+### [🚀 Open the live playground →](https://keeylogger.github.io/modulr/)
 
 </div>
 

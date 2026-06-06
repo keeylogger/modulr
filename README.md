@@ -1,125 +1,59 @@
 <div align="center">
 
-# Modulr
+# ✨ Modulr
 
-### Front-End Mechanics Playground
+**The Front-End Mechanics Playground** — a hyper-reactive, zero-backend studio for mastering CSS layout, SVG path geometry, and glass / neumorphic lighting.
 
-A hyper-reactive, **zero-backend** single-page app for mastering the mechanics behind modern front-end UI — CSS layout, SVG path geometry, and physical glass/neumorphic lighting. Everything runs in the browser and the **entire session state lives in the URL**, so sharing your work is just copying a link.
-
-[**Live Demo**](https://mtssilva.github.io/modulr/) · [Report a bug](https://github.com/mtssilva/modulr/issues)
+[![Build](https://github.com/mtssilva/modulr/actions/workflows/deploy.yml/badge.svg)](https://github.com/mtssilva/modulr/actions/workflows/deploy.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-22c55e.svg)](LICENSE)
+![React](https://img.shields.io/badge/React-18-3b82f6?logo=react&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-3178c6?logo=typescript&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-5-a855f7?logo=vite&logoColor=white)
+![Tailwind](https://img.shields.io/badge/Tailwind-3-2dd4bf?logo=tailwindcss&logoColor=white)
 
 </div>
 
 ---
 
-## ✦ Features
+## 🧩 What is it?
 
-Modulr ships three interactive tool zones, each with its own accent identity:
+Modulr turns abstract front-end concepts into things you can **grab and drag**. Three tools, one rule: edit either side — the code or the canvas — and the other updates instantly. The whole session lives in the URL, so sharing is just copying a link. No accounts, no servers. 🔗
 
-### 1. Two-Way Semantic Layout Engine `Electric Blue`
+## 🛠️ The Tools
 
-A split-screen flexbox & box modeler with genuine **two-way data binding**:
+| Tool | Accent | What you can do |
+| --- | --- | --- |
+| 🟦 **Layout Engine** | Electric Blue | Two-way flexbox/box modeler. Tweak inline CSS tokens, drag-resize boxes, and reorder them like puzzle pieces that slide around the one you're holding. |
+| 🟣 **SVG Anatomy** | Neon Purple | Parse any `M / L / C / Q / Z` path into draggable, color-coded anchors & bezier arms. Add nodes, delete them, and shift-select two anchors to **join** ends. |
+| 🟢 **Lighting Studio** | Emerald Cyan | Drag a glowing light orb to drive real vector math into multi-layer `box-shadow` (neumorphism) or `backdrop-filter` glass with an adjustable specular reflection. |
 
-- Edit CSS inline — `display`, `flex-direction`, `justify-content`, `align-items`, `flex-wrap`, `gap`, plus per-child `flex`, `align-self` — via tokens embedded directly in the simulated IDE.
-- **Drag to resize** the parent container or any child box; the numeric CSS values update live.
-- **Drag to reorder** child boxes with grip handles — the structural order rewrites instantly.
-- **Edge alignment activators** flash the corresponding CSS line in neon when toggled.
+## ⚡ Highlights
 
-### 2. SVG Path Anatomy Explainer `Neon Purple`
+- 🔗 **Serverless sharing** — full state is diffed against defaults, compressed into a URL-safe token, and rehydrated from `#state=…`.
+- 🎯 **60 fps interactions** — every drag is `requestAnimationFrame`-batched; layout reorders use FLIP for buttery sliding.
+- 🎨 **Premium dark UI** — translucent panels, physics-based easing, per-tool accent identities.
+- 🧠 **Two-way binding everywhere** — the canvas and the generated code are always in sync.
 
-A visual compiler that demystifies vector geometry:
-
-- Parses `M`, `L`, `C`, `Q`, `Z` commands from any `d="..."` string.
-- Injects **draggable handle nodes** for every coordinate — color-coded anchors vs. bezier control arms, with dotted guide lines.
-- Two-way: drag a node → the path string updates; type in the string → handles move. Snaps to a 10×10 grid.
-- A live **tracking HUD** follows your pointer with command + coordinate readouts.
-
-### 3. High-Impact Lighting Studio `Emerald Cyan`
-
-A spatial lighting engine driven by real vector math:
-
-- Drag the glowing **Light Source Orb** around the stage; the app computes the distance/angle vector from the card center continuously.
-- **Neumorphism mode** maps the light vector into multi-layered `box-shadow` (dark shadow opposes the light, soft highlight follows it).
-- **Glassmorphism mode** blends `backdrop-filter: blur()`, alpha layers, and a specular gradient that tracks the incoming ray angle.
-- A clean, copyable **code-generation panel** outputs formatted CSS.
-
-### ✦ Serverless Share System
-
-The global state object is diffed against defaults, JSON-encoded, and packed into a URL-safe token stored in the location hash (`#state=…`). The **Share** modal builds the full link and copies it with a satisfying "Copied!" micro-animation. Open any shared link and the app deeply rehydrates — no database, no API, ever.
-
----
-
-## ✦ Tech Stack
-
-- **React 18** + **TypeScript** + **Vite**
-- **Tailwind CSS** (dark theme, custom accent tokens, physics-based easing)
-- `requestAnimationFrame`-batched pointer dragging for locked 60fps interactions
-- Deployed to **GitHub Pages** via GitHub Actions
-
----
-
-## ✦ Local Development
+## 🚀 Quick Start
 
 ```bash
-# Install dependencies
-npm install
-
-# Start the dev server (http://localhost:5173)
-npm run dev
-
-# Type-check + production build
-npm run build
-
-# Preview the production build
-npm run preview
-
-# Lint
-npm run lint
+npm install     # install dependencies
+npm run dev      # start the dev server → http://localhost:5173
+npm run build    # type-check + production build
+npm run preview  # preview the production build
 ```
 
-> Requires Node 18+.
+> Requires **Node 18+**.
 
----
+## 📦 Tech Stack
 
-## ✦ Deployment (GitHub Pages)
+| Layer | Choice |
+| --- | --- |
+| Framework | React 18 + TypeScript |
+| Build | Vite 5 |
+| Styling | Tailwind CSS 3 |
+| State | URL-hash (de)serialization, zero backend |
 
-This repo auto-deploys on every push to `main` via [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml):
+## 📄 License
 
-1. In your repo: **Settings → Pages → Build and deployment → Source → GitHub Actions**.
-2. Push to `main`. The workflow builds with the correct base path (`/<repo>/`) and publishes `dist/` to Pages.
-
-The Vite `base` is resolved from the `BASE_PATH` env var (set automatically in CI to `/<repo>/`). To build for a custom path locally:
-
-```bash
-BASE_PATH=/my-path/ npm run build
-```
-
----
-
-## ✦ Project Structure
-
-```
-modulr/
-├─ .github/workflows/deploy.yml   # CI → GitHub Pages
-├─ public/favicon.svg
-├─ src/
-│  ├─ App.tsx                     # Navigation hub + module switcher
-│  ├─ main.tsx
-│  ├─ index.css                   # Tailwind + premium theme
-│  ├─ components/                 # Icons, Share modal
-│  ├─ lib/                        # Accents, rAF pointer-drag factory
-│  ├─ state/                      # Types, defaults, (de)serialization, context
-│  └─ modules/
-│     ├─ layout/                  # Module 1 — Layout Engine
-│     ├─ svg/                     # Module 2 — SVG Anatomy
-│     └─ lighting/                # Module 3 — Lighting Studio
-├─ index.html
-├─ tailwind.config.js
-└─ vite.config.ts
-```
-
----
-
-## ✦ License
-
-[MIT](LICENSE) © Matheus Silva
+Released under the [MIT License](LICENSE) © Matheus Silva.
